@@ -2,7 +2,7 @@ import os
 from config import MAX_CHARS
 from google.genai import types
 
-schema_get_files_info = types.FunctionDeclaration(
+schema_get_file_content = types.FunctionDeclaration(
     name="get_file_content",
     description=f"Reads the content of a file in a specified directory relative to the working directory, returns the first {MAX_CHARS} chars in the file and if truncated it adds that it was truncated",
     parameters=types.Schema(

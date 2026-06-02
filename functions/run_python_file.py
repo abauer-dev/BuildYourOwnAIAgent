@@ -2,7 +2,7 @@ import subprocess
 import os
 from google.genai import types
 
-schema_get_files_info = types.FunctionDeclaration(
+schema_run_python_file = types.FunctionDeclaration(
     name="run_python_file",
     description=f"Executes a python-file in a specified directory relative to the working directory, returns the output and/or errors from execution",
     parameters=types.Schema(
@@ -13,7 +13,7 @@ schema_get_files_info = types.FunctionDeclaration(
                 description="Path to python-file to execute, relative to the working directory (default is the working directory itself)",
             ),
             "args": types.Schema(
-                type=types.Type.LIST,
+                type=types.Type.OBJECT,
                 description="provides additional arguments as Strings to execute function",
             ),
         },
